@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="static/ico/favicon.png">
+
+  <title>SRM 3D Map: About</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/css/bootstrap.css" rel="stylesheet">
+  <link href="static/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/main.css" rel="stylesheet">
+
+  <script src="static/js/Chart.js"></script>
+
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img style="align-self:right margin-right= 0px; width:200px; margin-left: 0px; padding: 10px" src="https://academia.srmist.edu.in/49910842/academia-academic-services/downloadPortalImage?type=3&imageName=1519210955371_Untitled-1.jpg" >
+        <!-- <a class="navbar-brand" href="#">3D M<i class="fa fa-map-marker"></i>P</a> -->
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="{{ url_for('views.index') }}">HOME</a></li>
+          <li><a href="{{ url_for('views.about') }}">ABOUT</a></li>
+          <li><a href="{{ url_for('views.information') }}">INFORMATION</a></li>
+          <!-- <li><a href="{{ url_for('views.travelLog') }}">TRAVEL LOG</a></li> -->
+          <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
+          <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
+          <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
+   
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+  <div id="blue">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h4>THE TEAM</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container w">
+    <div class="row centered">
+      <br>
+      <br>
+      <div class="col-lg-6">
+        <img class="img-circle" src="static/img/img.png" width="110" height="110" alt="">
+        <h4>Akshat Sachan</h4>
+        <p> B.Tech CSE</p>
+        <p><a href="https://www.linkedin.com/in/akshat1sachan/" target="_blank">LinkedIn</a></p>
+      </div>
+
+      <div class="col-lg-6">
+        <img class="img-circle" src="static/img/img.png" width="110" height="110" alt="">
+        <h4>Aditya Mukherjee</h4>
+        <p>B.Tech CSE </p>
+        <p><a href="https://www.linkedin.com/in/akshat1sachan/" target="_blank">LinkedIn</a></p>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+
+  <!-- PORTFOLIO SECTION -->
+  <div id="dg">
+    <div class="container">
+      <div class="row centered">
+        <h4>OUR SKILLS</h4>
+        <br>
+
+        <!-- First Chart -->
+        <div class="col-lg-3">
+          <canvas id="canvas" height="130" width="130"></canvas>
+          <br>
+          <script>
+            var doughnutData = [{
+              value: 70,
+              color: "#3498db"
+            }, {
+              value: 30,
+              color: "#ecf0f1"
+            }];
+            var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
+          </script>
+          <p><b>Web Development</b></p>
+          <p><small>We made sure to implement the best practices of web development when building this website
+          using HTML, CSS, and JS.</small></p>
+        </div>
+
+        <!-- Second Chart -->
+        <div class="col-lg-3">
+          <canvas id="canvas2" height="130" width="130"></canvas>
+          <br>
+          <script>
+            var doughnutData = [{
+              value: 90,
+              color: "#3498db"
+            }, {
+              value: 10,
+              color: "#ecf0f1"
+            }];
+            var myDoughnut = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
+          </script>
+          <p><b>3D Graphics</b></p>
+          <p><small>We created an interactive 3D globe for our home page and modeled 3D
+        buildings on Google Maps.</small></p>
+        </div>
+
+        <!-- Third Chart -->
+        <div class="col-lg-3">
+          <canvas id="canvas3" height="130" width="130"></canvas>
+          <br>
+          <script>
+            var doughnutData = [{
+              value: 80,
+              color: "#3498db"
+            }, {
+              value: 20,
+              color: "#ecf0f1"
+            }];
+            var myDoughnut = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutData);
+          </script>
+          <p><b>User Interaction</b></p>
+          <p><small>Using WebGL, three.js, and Google Maps API, we allowed users to interact
+          with the website's globe and maps.</small></p>
+        </div>
+
+        <!-- Fourth Chart -->
+        <div class="col-lg-3">
+          <canvas id="canvas4" height="130" width="130"></canvas>
+          <br>
+          <script>
+            var doughnutData = [{
+              value: 60,
+              color: "#3498db"
+            }, {
+              value: 40,
+              color: "#ecf0f1"
+            }];
+            var myDoughnut = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutData);
+          </script>
+          <p><b>Design & Brand</b></p>
+          <p><small>We ensured that the website's design was professional and stylish.</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="r">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h4>DESIGNERS, DEVELOPERS, STORYTELLERS.</h4>
+          <p>We believe that everyone has a story, and we are inspired to help others share theirs.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- r wrap -->
+
+  <!-- FOOTER -->
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+</body>
+
+</html>

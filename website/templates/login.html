@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="static/ico/favicon.png">
+
+  <title>SRM 3D Map</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/css/bootstrap.css" rel="stylesheet">
+  <link href="static/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/main.css" rel="stylesheet">
+  <link href="static/css/login.css" rel="stylesheet">
+
+
+
+  <script src="static/js/Chart.js"></script>
+
+  
+  <style>
+  
+    html,body {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #eee;
+    }
+
+    .header {
+          height: 100vh;
+          background-image: 
+          linear-gradient(to right bottom, 
+        rgba(76, 216, 255, 0.8),
+        rgba(30, 108, 217, 0.8)),
+        url('https://i0.wp.com/mdmsenquiry.com/wp-content/uploads/2017/09/srm-university.jpg?resize=900%2C602&ssl=1');
+          
+        background-size: cover;
+          background-position: top;
+          position: relative;
+
+          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    }
+
+    .brand-box {
+          position: absolute;
+          top: 40px;
+          left: 40px;
+    }
+
+    .brand { font-size: 20px; }
+
+    .text-box {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+    }
+
+    .heading-primary {
+          color: #fff;
+          text-transform: uppercase;
+
+          backface-visibility: hidden;
+          margin-bottom: 30px;
+    }
+
+    .heading-primary-main {
+          display: block;
+          font-size: 26px;
+          font-weight: 400;
+          letter-spacing: 5px;
+    }
+
+    .heading-primary-sub {
+          display: block;
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: 7.4px;
+    }
+
+    .btn:link,
+    .btn:visited {
+          text-transform: uppercase;
+          text-decoration: none;
+          padding: 10px 20px;
+          display: inline-block;
+          border-radius: 100px;
+          transition: all .2s;
+          position: relative;
+    }
+
+    .btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:active {
+          transform: translateY(-1px);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-white {
+          background-color: #fff;
+          color: #777;
+        font-size: 14px;
+    }
+
+</style>
+
+
+</head>
+<header class="header">
+  {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        {% for category, message in messages %}
+        {% if category == "error" %}
+        <div>
+          {{ message }}
+          </button>
+        </div>
+        {% else %}
+          {{ message }}
+        </div>
+        {% endif %}
+
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+      <br><br><br><br><br>
+      <!-- <h3 align="center">Login</h3> -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          class="form-control"
+          placeholder="Enter Email"
+        />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          placeholder="Enter Password"
+        />
+        <br />
+        <div align="center">
+          <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+      </div>
+    </form>
+ <br>
+  <br>
+
+</header>
+<body>
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img style="align-self:right margin-right= 0px; width:200px; margin-left: 0px; padding: 10px" src="https://academia.srmist.edu.in/49910842/academia-academic-services/downloadPortalImage?type=3&imageName=1519210955371_Untitled-1.jpg" >
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="{{ url_for('views.index') }}">HOME</a></li>
+          <li><a href="{{ url_for('views.about') }}">ABOUT</a></li>
+          <li><a href="{{ url_for('views.information') }}">INFORMATION</a></li>
+          <!-- <li><a href="{{ url_for('views.travelLog') }}">TRAVEL LOG</a></li> -->
+          <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
+          <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
+          <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <br>
+   
+  <!-- Footer -->
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

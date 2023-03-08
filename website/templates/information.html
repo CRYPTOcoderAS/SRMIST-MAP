@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="static/ico/favicon.png">
+
+
+  <title>3D Map: Information</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/css/bootstrap.css" rel="stylesheet">
+  <link href="static/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/main.css" rel="stylesheet">
+
+  <script src="static/js/Chart.js"></script>
+
+  <!-- Google Maps -->
+  <style type="text/css">
+    html,
+    body {
+      height: 90%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      height: 90%;
+    }
+  </style>
+
+  <script src="static/js/informationMap.js"></script>
+
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="#">3D M<i class="fa fa-map-marker"></i>P</a> -->
+        <img style="align-self:right margin-right= 0px; width:200px; margin-left: 0px; padding: 10px" src="https://academia.srmist.edu.in/49910842/academia-academic-services/downloadPortalImage?type=3&imageName=1519210955371_Untitled-1.jpg" >
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="{{ url_for('views.index') }}">HOME</a></li>
+          <li><a href="{{ url_for('views.about') }}">ABOUT</a></li>
+          <li><a href="{{ url_for('views.information') }}">INFORMATION</a></li>
+          <!-- <li><a href="{{ url_for('views.travelLog') }}">TRAVEL LOG</a></li> -->
+          <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
+          <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
+          <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <!-- Google maps -->
+  <!-- <div id="map"></div>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWi9e52vvKDTlblig-9PTx494bFK5M5pA&callback=initMap">
+  </script> -->
+
+  <!-- Details -->
+  <!-- <div class="container wb">
+    <div class="row centered">
+
+      <div class="col-lg-8 col-lg-offset-2">
+        <h4>INFORMATION MAP</h4>
+        <div id="res"></div>
+        <script>
+          // SOURCE: http://www.codingforums.com/javascript-programming/284491-show-temperature-website.html
+          function weather(o) {
+            document.getElementById("res").innerHTML = "The temperature in Mechanicsburg, PA is " +
+              o.query.results.channel.item.condition.temp + " degrees Fahrenheit."
+          }
+        </script>
+        <script type="text/javascript" src="http://query.yahooapis.com/v1/public/yql?q=select%20item%20from%20weather.forecast%20where%20location%3D%2217055%22&format=json&callback=weather"></script>
+
+        <p>Click on any of the markers to obtain information on the facility.</p>
+        <p>
+          <br/>
+          <br/>
+        </p>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="flex-container">
+
+    <!-- <div class="flex-child magenta">
+      <a href="{{ url_for('views.tp') }}"> -->
+        <!-- <img src="https://i.ibb.co/2Sj99Nj/techpark.jpg" alt="techpark" border="0"> -->
+          <!-- <img src="https://i.ibb.co/2Sj99Nj/techpark.jpg" width="500" height="500"  alt="">
+          <h2>SRM TECH PARK</h2>
+        </a>        
+    </div> -->
+
+    <div class="row">
+
+      <div class="column">
+        <a href="{{ url_for('views.tp') }}">
+            <img src="https://i.ibb.co/2Sj99Nj/techpark.jpg" style="margin-left: 10%;" width="500" height="500"  alt="">
+            <h2  style="margin-left: 10%;" > SRM TECH PARK </h2>
+          </a>
+      </div>
+
+      <div class="column">
+        <a href="{{ url_for('views.ub') }}">       
+          <img src="https://i.ibb.co/YyMqrc8/ub.jpg" width="500" height="500" alt="" >
+          <!-- <img src="https://i.ibb.co/cr01NV9/SRM.png" alt="SRM" class="center"> -->
+          <h2>UNIVERSITY BUILDING</h2>
+        </a>        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <a href="{{ url_for('views.biotech') }}">
+          <img src="https://i.ibb.co/QcmknmP/biotech.png" style="margin-left:10%;" width="500" height="500"  alt="">
+          <h2  style="margin-left: 10%;" > BIO-TECH BLOCK </h2>
+        </a>         
+      </div>
+
+      <div class="column">
+        <a href="{{ url_for('views.hm') }}">       
+          <img src="https://i.ibb.co/WDQHWcZ/hmt.jpg" width="500" height="500" alt="" >
+          <!-- <img src="https://i.ibb.co/cr01NV9/SRM.png" alt="SRM" class="center"> -->
+          <h2>HOTEL MANAGEMENT</h2>
+        </a>        
+      </div>
+    
+    </div>
+
+    
+    <!-- <div class="flex-child green"> -->
+      <!-- <a href="website/templates/ub.html"> -->
+        <!-- <li><a href="{{ url_for('views.information') }}">INFORMATION</a></li> -->
+        
+        <!-- <a href="{{ url_for('views.ub') }}">       
+        <img src="https://i.ibb.co/YyMqrc8/ub.jpg" width="500" height="500" alt="" > -->
+        <!-- <img src="https://i.ibb.co/cr01NV9/SRM.png" alt="SRM" class="center"> -->
+        <!-- <h2>UNIVERSITY BUILDING</h2>
+      </a>
+    </div> -->
+
+    
+  </div> 
+
+  <!-- Footer -->
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="static/ico/favicon.png">
+
+  <title>SRM 3D Map</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/css/bootstrap.css" rel="stylesheet">
+  <link href="static/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/main.css" rel="stylesheet">
+
+  <script src="static/js/Chart.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="#">3D M<i class="fa fa-map-marker"></i>P</a> -->
+        <img style="align-self:right margin-right= 0px; width:200px; margin-left: 0px; padding: 10px" src="https://academia.srmist.edu.in/49910842/academia-academic-services/downloadPortalImage?type=3&imageName=1519210955371_Untitled-1.jpg" >
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="{{ url_for('views.index') }}">HOME</a></li>
+          <li><a href="{{ url_for('views.about') }}">ABOUT</a></li>
+          <li><a href="{{ url_for('views.information') }}">INFORMATION</a></li>
+          <!-- <li><a href="{{ url_for('views.travelLog') }}">TRAVEL LOG</a></li> -->
+          <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
+          <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
+          <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
+         
+     
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  
+  <div class="wrapper">
+    <div class="box">
+      <img src="https://i.ibb.co/WDQHWcZ/hmt.jpg" width="500" height="500" alt="">
+      <h2>HOTEL MANAGEMENT</h2>
+      <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Floor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">0</th>
+        <td>SRM Central Library</td>
+        <td>SRM Food Point</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>Digital Library</td>
+        <td>Own Book Reading Section</td>
+        <td></td>  
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Directorate of Admission</td>
+        <td>Admission Enquiry</td>
+        <td>International Relations-Bussiness Development</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>SRMIST Admissions (Sci and Humanities)</td>
+        <td>ITKM Help Center </td>
+        <td>University Information Center</td>  
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>SRM Sat Lab</td>
+        <td>Directorate of Alumni Affairs</td>
+        <td>ITKM Training Center</td>  
+        <td>Tissue Engineering Lab</td>
+        <td>Phytochemistry Lab</td>
+        <td>Research Office</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Tamizh Academy</td>
+        <td>Dept of Mathematics</td>
+        <td>Staff Rooms</td>  
+        <td>Tamil Association</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Dept of Mechanical Engg. </td>
+        <td>Dept of Physics and Nanotech</td>
+        <td>Physics Material Science Lab</td>  
+        <td>Amul Canteen</td>
+        <td>Nanotech Lab</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>NextTech Lab</td>
+        <td>Dept of Physics and Nanotech Research Scholars</td>
+        <td>CSE Programming Lab</td>  
+        <td>Audit Section</td>
+        <td>Career Development Center</td>
+        <td>Chemistry Staff Room</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>LDRA Centre</td>
+        <td>Dept of CSE Staff Room</td>
+        <td>Dept of IT Staff Room</td>  
+        <td>CSE Programming Lab</td>
+        <td>Dept of Mathematics</td>
+        <td>Electrical Workshop</td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>AHU Room</td>
+        <td>EB Room</td>
+        <td>Academia Help Desk</td>  
+        <td>Accounts Section</td>
+        <td>B.Sc.Horticulture</td>
+        <td>Administrative Office</td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>Conference Hall</td>
+        <td>HOD Office (Dept of Mathematics)</td>
+        <td>Class Rooms</td>  
+        <td>EB Room/td>
+        <td>Staff Room</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>Dept of English and Foreign Languages</td>
+        <td>Canteen</td>
+        <td>Chemistry Research Scholars</td>  
+        <td>SRM Care</td>
+        <td>Taiwan Education Centre</td>
+        <td>Class Rooms</td>
+      </tr>
+      <tr>
+        <th scope="row">12</th>
+        <td>Dept of Software Engineering</td>
+        <td>Programming Languages Lab</td>
+        <td>Language Resource Centre</td>  
+        <td>Class Rooms</td>
+        <td>Optical Lithigraphy Lab</td>
+        <td>Staff Room</td>
+      </tr>
+      <tr>
+        <th scope="row">13</th>
+        <td>High Performance Computing Lab</td>
+        <td>Chemical Sciences Lab</td>
+        <td>Environmental Science and Technologies Lab</td>  
+        <td>Electrochemical Energy Lab</td>
+        <td>Quantum Engineering Lab</td>
+        <td>Material Processing Lab</td>
+      </tr>
+      <tr>
+        <th scope="row">14</th>
+        <td>Office of Controller of Examinations</td>
+        <td>Enquiry Office</td>
+        <td>Evaluation Hall</td>  
+        <td>Conference Room</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">15</th>
+        <td>University Office</td>
+        <td>Chancellor Office</td>
+        <td>Vice Chancellor Office</td>  
+        <td>Registrar Office</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+
+  <!-- Footer -->
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>

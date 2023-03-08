@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="static/ico/favicon.png">
+
+  <title>3D Map: Travel Log</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/css/bootstrap.css" rel="stylesheet">
+  <link href="static/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/main.css" rel="stylesheet">
+
+  <script src="static/js/Chart.js"></script>
+
+
+  <!-- Google Visualization Geochart -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['geochart']
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Country'],
+        ['United Kingdom'],
+        ['United States'],
+        ['Malaysia'],
+        ['Ghana'],
+
+      ]);
+
+      var options = {
+        defaultColor: '#B4CDCD',
+        legend: 'none',
+        backgroundColor: '#D3D3D3'
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="#">3D M<i class="fa fa-map-marker"></i>P</a> -->
+        <img style="align-self:right margin-right= 0px; width:200px; margin-left: 0px; padding: 10px" src="https://academia.srmist.edu.in/49910842/academia-academic-services/downloadPortalImage?type=3&imageName=1519210955371_Untitled-1.jpg" >
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="{{ url_for('views.index') }}">HOME</a></li>
+          <li><a href="{{ url_for('views.about') }}">ABOUT</a></li>
+          <li><a href="{{ url_for('views.information') }}">INFORMATION</a></li>
+          <li><a href="{{ url_for('views.travelLog') }}">TRAVEL LOG</a></li>
+          <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
+          <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <!-- Google maps -->
+  <div class="container w">
+    <div class="">
+
+      <div id="regions_div" style="width: 1200px; height: 600px;" ;></div>
+
+    </div>
+  </div>
+
+  <br>
+
+  <!-- Information -->
+  <div class="container wb">
+
+    <div class="row centered">
+      <div class="col-lg-4">
+        <img src="static/img/education.png" width="50" height="50" alt=""></img>
+
+        <h4>EDUCATION</h4>
+        <li>Messiah College, U.S.</li>
+        <li>University of Oxford, U.K. (Study Abroad)</li>
+        <li>Methodist College, Malaysia (12<sup>th</sup> Grade)</li>
+
+      </div>
+
+      <div class="col-lg-4">
+        <img src="static/img/project.png" width="50" height="50" alt=""></img>
+        <h4>PROJECTS</h4>
+        <li>Washington University; Penn State, U.S.</li>
+        <li>Messiah College, U.S.</li>
+        <li>Accra, Ghana</li>
+      </div>
+
+      <div class="col-lg-4">
+        <img src="static/img/travel.png" width="50" height="50" alt=""></img>
+        <h4>TRAVEL</h4>
+        <li>London, U.K.</li>
+        <li>Terengganu, Malaysia</li>
+        <li>Sarawak, Malaysia</li>
+      </div>
+
+      <br>
+      <br>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  
+  <!-- Footer -->
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+</body>
+
+</html>

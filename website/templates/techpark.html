@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="static/ico/favicon.png">
+
+  <title>SRM 3D Map</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/css/bootstrap.css" rel="stylesheet">
+  <link href="static/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/main.css" rel="stylesheet">
+
+  <script src="static/js/Chart.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="#">3D M<i class="fa fa-map-marker"></i>P</a> -->
+        <img style="align-self:right margin-right= 0px; width:200px; margin-left: 0px; padding: 10px" src="https://academia.srmist.edu.in/49910842/academia-academic-services/downloadPortalImage?type=3&imageName=1519210955371_Untitled-1.jpg" >
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="{{ url_for('views.index') }}">HOME</a></li>
+          <li><a href="{{ url_for('views.about') }}">ABOUT</a></li>
+          <li><a href="{{ url_for('views.information') }}">INFORMATION</a></li>
+          <!-- <li><a href="{{ url_for('views.travelLog') }}">TRAVEL LOG</a></li> -->
+          <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
+          <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
+          <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
+         
+      </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  
+  <div class="wrapper">
+    <style type="text/css">
+      p{
+      padding: 7px;
+      text-align: justify; }
+      .left{
+      width: 45%;
+      float: left; }
+      .right{
+      width: 45%;
+      float: right; }
+      .mid{
+        width: 45%;
+        float: center;
+      }
+      </style>
+      </head>
+      <body>
+      
+     <style>
+      h1 {
+          color:Green;
+      }
+      div.scroll {
+          margin:4px, 4px;
+          padding:4px;
+          background-color: green;
+          width: 500px;
+          height: 110px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          text-align:justify;
+      }
+  </style>
+  <div class="right">
+    
+    <img src="https://i.ibb.co/2Sj99Nj/techpark.jpg" width="500" height="500" alt="">
+    <h2>SRM TECH PARK</h2>
+  </div>
+  <div style="height:100px;
+  width:300px;overflow:auto;
+  background-color:yellowgreen; color:white; scrollbar-base-color:gold; 
+  font-family:sans-serif;padding:10px;">
+    
+    <div class="card-body">
+      <br><br><br>
+        <div class="card">
+            {% for comment in comments %}
+                {{comment.user.username}}: {{comment.text}}
+           
+              <div>
+                <small class="text-muted"> {{comment.date_created}}</small>
+                {% if user.id == comment.author %}
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-primary dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                  ></button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        href="/delete-comment/{{comment.id}}"
+                        class="dropdown-item"
+                        >Delete</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                {% endif %}
+              </div>
+
+            </div>
+            {% endfor %}
+    </p>
+  
+<div class="left"> 
+        <form
+        class="input-group mb-3"
+        method="POST"
+        action="/create-comment/1"
+      >
+        <input
+          type="text"
+          id="text"
+          name="text"
+          class="form-control"
+          placeholder="Comment something!"
+        />
+        <button type="submit" class="btn btn-primary">Comment</button>
+      </form>
+     </div>
+   
+     
+      
+ 
+    
+     
+      
+      <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Floor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">0</th>
+        <td>Assembly Language Lab</td>
+        <td>Computer Hardware and Troubleshooting Lab</td>
+        <td>Pen Source Programming Lab</td>
+        <td>Artificial Intelligence  Lab</td>
+        <td>Computer Graphics Lab</td>
+        <td>Canteen</td>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td>Optical Wireless Communication Lab(DRDO)</td>
+        <td>SRM Tejas Network Joint Venture</td>
+        <td>Class Rooms</td>  
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Tamil Computing Lab</td>
+        <td>Brain Computer Interferance Lab</td>
+        <td>IET Office</td>
+        <td>Class Rooms</td>
+        <td>Staff Room</td>
+        <td>DTP Section</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Web System Lab</td>
+        <td>Cyber Forensics Lab</td>
+        <td>Class Rooms</td>  
+        <td>Embedded System Lab</td>
+        <td>RDBMS Lab</td>
+        <td>CISCO Academy</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Open Source Technologies Lab</td>
+        <td>OOPS Lab</td>
+        <td>Conference Room</td>  
+        <td>HOD Office (Dept of IT)</td>
+        <td>Visual Programming Lab</td>
+        <td>Class Rooms</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Interacive Programming Lab</td>
+        <td>Web System Lab</td>
+        <td>Class Rooms</td>  
+        <td>Data Structures Lab</td>
+        <td>RM NEC Japan Collaborative Research Center</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Microprocessor Lab</td>
+        <td>Internet Programming and Tools Lab</td>
+        <td>Class Rooms</td>  
+        <td>Department of Computer Science</td>
+        <td>Data Structures Lab</td>
+        <td>CSE Dept Library</td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>Staff Room</td>
+        <td>Compiler Design Lab</td>
+        <td>UPS Room</td>  
+        <td>RDBMS Lab</td>
+        <td>Networking Lab</td>
+        <td>Office Suite Lab</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>HOD Office (Dept. of CSE)</td>
+        <td>Operating System Lab</td>
+        <td>Class Rooms</td>  
+        <td>Conference Hall</td>
+        <td>Research and Development Lab</td>
+        <td>Operating System Lab</td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>Digital IC Lab</td>
+        <td>Research Lab</td>
+        <td>HOD Office (Dept of ECE)</td>  
+        <td>Digital Signal Processing Lab</td>
+        <td>Exam Cell</td>
+        <td>Micro Processing Lab</td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>Basic Electric Lab</td>
+        <td>Computing Lab</td>
+        <td>Class Rooms</td>  
+        <td>Communication Engineering Lab</td>
+        <td>Electronic Circuit Lab</td>
+        <td>Staff Room</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>Microwave Communication</td>
+        <td>VLSI Stimulation Lab</td>
+        <td>Akash Lab</td>  
+        <td>Networking Lab</td>
+        <td>Optical Communication Lab</td>
+        <td>Class Rooms</td>
+      </tr>
+      <tr>
+        <th scope="row">12</th>
+        <td>Seminar Hall</td>
+        <td>EDA Lab</td>
+        <td>VLSI Design Lab</td>  
+        <td>Class Rooms</td>
+        <td>Dept Library</td>
+        <td>Staff Room</td>
+      </tr>
+      <tr>
+        <th scope="row">13</th>
+        <td>Conference Hall</td>
+        <td>RF Circuits and Device Lab</td>
+        <td>Wireless Information and Network Lab</td>  
+        <td>Advance Wireless Communication Lab</td>
+        <td>Radio Communication and Wave Research Center</td>
+        <td>Staff Room</td>
+      </tr>
+      <tr>
+        <th scope="row">14</th>
+        <td>Virtual Instrument Lab</td>
+        <td>Transducer Engineering Lab</td>
+        <td>Process Control Lab</td>  
+        <td>Instrumentation Service Center</td>
+        <td>Automation Lab</td>
+        <td>Conference Hall</td>
+      </tr>
+      <tr>
+        <th scope="row">15</th>
+        <td>Control System Engineering Lab</td>
+        <td>Digital Image Proccessing Lab</td>
+        <td>Research Lab</td>  
+        <td>Linear and Digital IC Lab</td>
+        <td>Microprocessor and Microcontroller Lab</td>
+        <td>Circuit and Devices Lab</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    
+   
+    
+  <!-- Footer -->
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
