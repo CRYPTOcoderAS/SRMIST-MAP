@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="static/ico/favicon.png">
-  
-    <title>SRM 3D Map: About</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="static/ico/favicon.png">
 
-    <link href="static/css/bootstrap.css" rel="stylesheet">
-    <link href="static/css/font-awesome.min.css" rel="stylesheet">
-  
-    <!-- Custom styles for this template -->
-    <link href="static/css/main.css" rel="stylesheet">
-  
-    <script src="static/js/Chart.js"></script>
-    
-  <!-- <style>
+  <title>Regional GIS-based Location Map with 3-D Projection for Multistoried Buildings</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/css/bootstrap.css" rel="stylesheet">
+  <link href="static/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/main.css" rel="stylesheet">
+
+  <script src="static/js/Chart.js"></script>
+  <style>
     html,*{padding: 0; margin: 0; box-sizing: border-box;}
     body{height: 900px;}
     header {
@@ -200,7 +200,7 @@
     .button-80:not(:disabled):active {
     transform: translateY(.125rem);
     }
-  </style> -->
+  </style>
 </head>
 <body>
 
@@ -213,22 +213,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <img style="align-self:right margin-right= 0px; width:200px; margin-left: 0px; padding: 10px" src="https://academia.srmist.edu.in/49910842/academia-academic-services/downloadPortalImage?type=3&imageName=1519210955371_Untitled-1.jpg" >
-        <!-- <a class="navbar-brand" href="#">3D M<i class="fa fa-map-marker"></i>P</a> -->
+       <!-- <a class="navbar-brand" href="#">Regional GIS-based Location M<i class="fa fa-map-marker"></i>P with 3-D Projection for Multistoried Buildings</a>-->
       </div>
       <div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="{{ url_for('views.index') }}">HOME</a></li>
-            <li><a href="{{ url_for('views.about') }}">ABOUT</a></li>
-            <li><a href="{{ url_for('views.information') }}">INFORMATION</a></li>
-            <!-- <li><a href="{{ url_for('views.travelLog') }}">TRAVEL LOG</a></li> --> 
-            <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
-            <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
-            <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
-     
-          </ul>
-        </div>
+        <ul>
+          <li><a href="{{ url_for('index') }}">HOME</a></li>
+          <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+          <li><a href="{{ url_for('combined') }}">Maps</a></li>
+          <li><a href="{{ url_for('distance') }}">2-D PATH FINDER</a></li>
+          <li><a href="{{ url_for('projection') }}">3-D PROJECTION</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -249,9 +243,9 @@
     </tr>
     <tr>
       <td>
-        SRM students belonging to branches of CSE,ECE, and IT study here. There are 6 classrooms in every floor, and there are 15 floors total. The labs are well designed and have proper AC facilities. The place also has a canteen where one may get all sorts of food. All teachers are also present here only in the staff rooms. Its one of the best part of SRM.
+        SRM students belonging to branches of CSE,ECE, and IT study here. There are 6 classrooms in every floor, and there are 15 floors total. The labs are well designed and have proper AC facilities. The place also has a canteen where one may get all sorts of food.All teachers are also present here only in the staff rooms. Its one of the best part of SRM.
       </td>
-      <td><img src="static\img\techpark.jpg" width="300" height="200" alt=""></img></td>
+      <td><img src="static/img/tech park.jpg" width="300" height="200" alt=""></img></td>
     </tr>
       </table>
   <br>
@@ -261,11 +255,11 @@
 <table style=" margin-left: auto;  
 margin-right: auto; ">
 <tr><td>
-<form method="POST" action="{{ url_for('views.about') }}">
+<form method="POST" action="{{ url_for('techpark') }}">
     <!-- Buttons -->
 
          <table style="width:90%;margin-left:auto;margin-right:auto;text-align:center;font-size: 20px;color:black;">
-            <tr><td> <h3>Select the name of the professor to view the path to cabin and floor details:</h3></td></tr>
+            <tr><td> <h3>Select the name of the professor to view the path to cabin and details:</h3></td></tr>
             <tr><td>Professor Name :</td></tr>
           <tr><td><div><select name= name>
           {% for professor in professors %}

@@ -23,6 +23,8 @@ for i in cursor:
 
 dist = Blueprint("dist", __name__)
 
+
+
 @dist.route('/distance',methods=['POST','GET'])
 def distance():
     if request.method == 'POST':

@@ -4,6 +4,9 @@ from flask import Flask, render_template, url_for, request, session, redirect
 import pymongo
 from .models import Comment,User
 from . import db as db_sql
+import pymysql as mysql 
+from flask import Flask, render_template
+
 try:
     conn = pymongo.MongoClient('mongodb+srv://aditya:12345@cluster0.rutst.mongodb.net/test')
     print("Connected successfully!!!")
@@ -27,10 +30,41 @@ def index():
     return render_template('index.html')
 
 
-
-@views.route('/about')
+@views.route('/about',methods=['POST','GET'])
 def about():
-    return render_template('about.html')
+    try:
+        mydb = mysql.connect(
+            host='127.0.0.1',
+            port=3306,
+            user='root',
+            password='root',
+            db='srm'
+        )
+        print("Connected successfully to mysql!!!")
+    except:
+        print("Could not connect to mysql")
+    
+    if "form2-submit" in request.form and request.method == 'POST':
+        name = request.form['name']
+        cursor = mydb.cursor()
+        query = "Select p_name from tpinfo;"
+        cursor.execute(query)
+        professor_name = cursor.fetchall()
+        print(professor_name)
+        query2 = "select * from tpinfo where p_name= %s;"
+        cursor.execute(query2,(name))
+        data = cursor.fetchone()
+        print(data)
+        return render_template('about.html',data=data,professors=professor_name)
+    cursor = mydb.cursor()
+    query = "Select p_name from tpinfo;"
+    cursor.execute(query)
+    professor_name = cursor.fetchall()
+    return render_template('about.html',professors=professor_name,data=('.','.','.','.'))
+
+# @views.route('/about')
+# def about():
+#     return render_template('about.html')
 
 
 @views.route('/information')

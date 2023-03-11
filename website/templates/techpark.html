@@ -95,20 +95,24 @@
     <img src="https://i.ibb.co/2Sj99Nj/techpark.jpg" width="500" height="500" alt="">
     <h2>SRM TECH PARK</h2>
   </div>
-  <div style="height:100px;
-  width:300px;overflow:auto;
-  background-color:yellowgreen; color:white; scrollbar-base-color:gold; 
+  <div style="height:500px;
+  width:800px;overflow:auto;
+  background-color:#00a2e8; color:white; scrollbar-base-color:rgb(0, 38, 255); 
   font-family:sans-serif;padding:10px;">
     
     <div class="card-body">
-      <br><br><br>
+   
         <div class="card">
             {% for comment in comments %}
-                {{comment.user.username}}: {{comment.text}}
+          
+            <small class="text-muted1">{{comment.user.username}} </small> : {{comment.text}}
+          
+               
            
-              <div>
+        
                 <small class="text-muted"> {{comment.date_created}}</small>
                 {% if user.id == comment.author %}
+              
                 <div class="btn-group">
                   <button
                     type="button"
@@ -128,7 +132,7 @@
                 {% endif %}
               </div>
 
-            </div>
+            
             {% endfor %}
     </p>
   
@@ -147,13 +151,16 @@
         />
         <button type="submit" class="btn btn-primary">Comment</button>
       </form>
+    </div>
      </div>
    
-     
-      
+    </div>
+ 
  
     
-     
+     <div>
+
+    
       
       <table class="table">
     <thead class="thead-light">
@@ -310,7 +317,7 @@
   </table>
     </div>
     
-   
+  
     
   <!-- Footer -->
   <div id="f">

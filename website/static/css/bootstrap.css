@@ -302,13 +302,16 @@ p {
   }
 }
 small, .small {
-  font-size: 85%;
+  font-size: 90%;
 }
 cite {
   font-style: normal;
 }
 .text-muted {
-  color: #999999;
+  color: #080808;
+}
+.text-muted1 {
+  color: #d64949;
 }
 .text-primary {
   color: #428bca;
