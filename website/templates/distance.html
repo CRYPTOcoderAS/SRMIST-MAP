@@ -74,98 +74,141 @@
     </div>
   </div>
 
+
   <br>
   <br>
   <br>
 
-  <!-- Google maps -->
-  <!-- <div id="map"></div> -->
-  <style type="text/css">
-    html,
-    body {
-      height: 85%;
-      margin: 0;
-      padding: 0;
-    }
+  <div class="wrapper">
+    <style type="text/css">
+      p{
+      padding: 7px;
+      text-align: justify; }
+      .left{
+      width: 25%;
+      float: left; }
+      .right{
+      width: 85%;
+      height: 450px;
+      float: right; }
+      .mid{
+        width: 45%;
+        float: center;
+      }
+      </style>
+      </head>
+      <body>
+      
+     <style>
+      h1 {
+          color:Green;
+      }
+      div.scroll {
+          margin:4px, 4px;
+          padding:4px;
+          background-color: green;
+          width: 500px;
+          height: 700px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          text-align:justify;
+      }
+  </style>
+  <div class="right">
+    <p style="line-height: 0px; margin-bottom: 10px; color: black; font-size: 20px;">Determine the path between two SRM buildings.</p>
+    <iframe src="{{ final_map }}"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        width="100%"
+        height="100%"
+        scrolling="auto">
+    </iframe>
+ 
+  </div>
 
-    #map {
-      height: 85%;
-    }
-  </style> 
-  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWi9e52vvKDTlblig-9PTx494bFK5M5pA&callback=initMap">
-  </script> -->
-  <br>
-  <div class="container wb">
-    <div class="row centered">
-      <div class="col-lg-8 col-lg-offset-2">
-        <div class="brightness">
-        
-          <!--  <a  href="https://adityamukherjee42-srmap-app-b4ocxl.streamlitapp.com/" > -->
-            <img src="static/img/distance.png" width="50" height="50" alt=""></img>
-            <h4 style="color:red">Pathfinder</h4>
-          </a>
-        </div>
-       
-        <p>Determine the path between two SRM buildings.
-        </p>
-      </div>
-    </div>
+  <div style="height:500px;
+  overflow:auto;
+  margin-left: 1px;
+
+  background-color:#00a2e8; color:white; scrollbar-base-color:rgb(0, 38, 255); 
+  font-family:sans-serif;padding:10px;">
     
-        <!-- <h4>DISTANCE DETERMINER</h4>
-        <p>
-          <li> Click "START" to begin. </li>
-          <li> Click along the path between two locations to determine its distance. Click "CLEAR" to start over.</li>
-          <li>Click on "DONE" when finished.</li>
+    <div class="card-body">
+   
+        
+      <style>
+    .container1 {
+    width: 100px;
+    height: 100px;
+   
+    display: flex;
+    justify-content: center;
+}
 
+.container1 img {
+    width: 50px;
+    height: 50px;
+}
+   
+      </style>
 
-
-        </p>
-        <hr>
-        <h4> The distance is:</h4>
-        <p>
-          <div id="distanceHereDiv">.</div>
-        </p> -->
-      </div>
-    </div>
-  </div>
-<form method="POST" action="{{ url_for('dist.distance') }}">
-  <!-- Buttons -->
+<div class="left" > 
   <div class="row centered">
-    <div class="col-sm-offset-4">
-      <div class="col-sm-2">
-        <h4>Source</h4>
-        <select name= source>
-        {% for landmark in landmarks %}
-        <option value= "{{landmark}}" selected='selected'>{{landmark}}</option>"
-        {% endfor %}
-      </select>
-
-      </div>
-</div>
-      <div class="col-sm-2">
-        <h4>Destination</h4>
-        <select name= target>
-        {% for landmark in landmarks %}
-            <option value= "{{landmark}}" selected='selected'>{{landmark}}</option>"
-        {% endfor %}
+    <div class="container1">
+    
+  <div class="brightness" >
+   
+      <img src="static/img/distance.png"  width="50" height="50" alt=""></img>
+      <h4 style="color:red">Pathfinder</h4>
+     
+   
+   </div>
+    <!--  <a  href="https://adityamukherjee42-srmap-app-b4ocxl.streamlitapp.com/" > -->
+     
+      
+  </div>
+ </div>
+  <form method="POST" action="{{ url_for('dist.distance') }}">
+    <!-- Buttons -->
+    <div class="row centered">
+        <div class="col-sm-2">
+          <h4 style="font-color:rgb(31, 161, 194) ">Source</h4>
+          <select style="width:180px;" name= source>
+          {% for landmark in landmarks %}
+          <option value= "{{landmark}}" selected='selected'>{{landmark}}</option>"
+          {% endfor %}
         </select>
+  
+        </div>
+ </div>
+  
+
+       
+          <h4>Destination</h4>
+          <select style="width:180px;" name= target>
+          {% for landmark in landmarks %}
+              <option value= "{{landmark}}" selected='selected'>{{landmark}}</option>"
+          {% endfor %}
+          </select>
+        
+        <div class="col-sm-2">
+          <br>
+        <button style="padding: 2px;
+        margin-left: 55px; width: 50px;" type="submit" value="Submit" >Find Path</button>
+        <!-- col-lg-3 -->
       </div>
-      <button type="submit" value="Submit" >Find Path</button>
-      <!-- col-lg-3 -->
     </div>
   </div>
-</form>
-  
-  <br>
-  <br>
-  <iframe src="{{ final_map }}"
-			frameborder="0"
-			marginheight="0"
-			marginwidth="0"
-			width="100%"
-			height="100%"
-			scrolling="auto">
-	</iframe>
+  </form>
+ 
+   
+    </div>
+ 
+ 
+    
+     <div>
+
 
     <!-- FOOTER -->
   <div id="f">

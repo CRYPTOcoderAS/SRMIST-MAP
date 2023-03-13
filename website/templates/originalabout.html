@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="static/ico/favicon.png">
 
-  <title>SRM 3D Map: About</title>
+  <title>3D Map: Distance</title>
 
   <!-- Bootstrap core CSS -->
   <link href="static/css/bootstrap.css" rel="stylesheet">
@@ -20,6 +20,22 @@
 
   <script src="static/js/Chart.js"></script>
 
+
+  <!-- Google Maps -->
+  <!-- <style type="text/css">
+    html,
+    body {
+      height: 85%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      height: 85%;
+    }
+  </style> -->
+
+  <!-- <script src="static/js/distanceMap.js"></script> -->
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -44,151 +60,115 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="{{ url_for('views.index') }}">HOME</a></li>
+         <li><a href="{{ url_for('views.index') }}">HOME</a></li>
           <li><a href="{{ url_for('views.about') }}">ABOUT</a></li>
           <li><a href="{{ url_for('views.information') }}">INFORMATION</a></li>
           <!-- <li><a href="{{ url_for('views.travelLog') }}">TRAVEL LOG</a></li> -->
           <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
           <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
           <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
-   
+          
         </ul>
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-  </div>
 
-  <div id="blue">
-    <div class="container">
-      <div class="row centered">
-        <div class="col-lg-8 col-lg-offset-2">
-          <h4>THE TEAM</h4>
-        </div>
       </div>
     </div>
   </div>
 
-  <div class="container w">
+
+  <br>
+  <br>
+  <br>
+
+  <!-- Google maps -->
+  <!-- <div id="map"></div> -->
+  <style type="text/css">
+    html,
+    body {
+      height: 85%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      height: 85%;
+    }
+  </style> 
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWi9e52vvKDTlblig-9PTx494bFK5M5pA&callback=initMap">
+  </script> -->
+  <br>
+  <div class="container wb">
     <div class="row centered">
-      <br>
-      <br>
-      <div class="col-lg-6">
-        <img class="img-circle" src="static/img/img.png" width="110" height="110" alt="">
-        <h4>Akshat Sachan</h4>
-        <p> B.Tech CSE</p>
-        <p><a href="https://www.linkedin.com/in/akshat1sachan/" target="_blank">LinkedIn</a></p>
-      </div>
-
-      <div class="col-lg-6">
-        <img class="img-circle" src="static/img/img.png" width="110" height="110" alt="">
-        <h4>Aditya Mukherjee</h4>
-        <p>B.Tech CSE </p>
-        <p><a href="https://www.linkedin.com/in/akshat1sachan/" target="_blank">LinkedIn</a></p>
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="brightness">
+        
+          <!--  <a  href="https://adityamukherjee42-srmap-app-b4ocxl.streamlitapp.com/" > -->
+            <img src="static/img/distance.png" width="50" height="50" alt=""></img>
+            <h4 style="color:red">Pathfinder</h4>
+          </a>
+        </div>
+       
+        <p style="line-height: 0px; margin-bottom: 10px;">Determine the path between two SRM buildings.</p>
       </div>
     </div>
-    <br>
-    <br>
-  </div>
+    
+        <!-- <h4>DISTANCE DETERMINER</h4>
+        <p>
+          <li> Click "START" to begin. </li>
+          <li> Click along the path between two locations to determine its distance. Click "CLEAR" to start over.</li>
+          <li>Click on "DONE" when finished.</li>
 
-  <!-- PORTFOLIO SECTION -->
-  <div id="dg">
-    <div class="container">
-      <div class="row centered">
-        <h4>OUR SKILLS</h4>
-        <br>
 
-        <!-- First Chart -->
-        <div class="col-lg-3">
-          <canvas id="canvas" height="130" width="130"></canvas>
-          <br>
-          <script>
-            var doughnutData = [{
-              value: 70,
-              color: "#3498db"
-            }, {
-              value: 30,
-              color: "#ecf0f1"
-            }];
-            var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
-          </script>
-          <p><b>Web Development</b></p>
-          <p><small>We made sure to implement the best practices of web development when building this website
-          using HTML, CSS, and JS.</small></p>
-        </div>
 
-        <!-- Second Chart -->
-        <div class="col-lg-3">
-          <canvas id="canvas2" height="130" width="130"></canvas>
-          <br>
-          <script>
-            var doughnutData = [{
-              value: 90,
-              color: "#3498db"
-            }, {
-              value: 10,
-              color: "#ecf0f1"
-            }];
-            var myDoughnut = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
-          </script>
-          <p><b>3D Graphics</b></p>
-          <p><small>We created an interactive 3D globe for our home page and modeled 3D
-        buildings on Google Maps.</small></p>
-        </div>
-
-        <!-- Third Chart -->
-        <div class="col-lg-3">
-          <canvas id="canvas3" height="130" width="130"></canvas>
-          <br>
-          <script>
-            var doughnutData = [{
-              value: 80,
-              color: "#3498db"
-            }, {
-              value: 20,
-              color: "#ecf0f1"
-            }];
-            var myDoughnut = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutData);
-          </script>
-          <p><b>User Interaction</b></p>
-          <p><small>Using WebGL, three.js, and Google Maps API, we allowed users to interact
-          with the website's globe and maps.</small></p>
-        </div>
-
-        <!-- Fourth Chart -->
-        <div class="col-lg-3">
-          <canvas id="canvas4" height="130" width="130"></canvas>
-          <br>
-          <script>
-            var doughnutData = [{
-              value: 60,
-              color: "#3498db"
-            }, {
-              value: 40,
-              color: "#ecf0f1"
-            }];
-            var myDoughnut = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutData);
-          </script>
-          <p><b>Design & Brand</b></p>
-          <p><small>We ensured that the website's design was professional and stylish.</small></p>
-        </div>
+        </p>
+        <hr>
+        <h4> The distance is:</h4>
+        <p>
+          <div id="distanceHereDiv">.</div>
+        </p> -->
       </div>
+    
+<form method="POST" action="{{ url_for('dist.distance') }}">
+  <!-- Buttons -->
+  <div class="row centered">
+    <div class="col-sm-offset-4">
+      <div class="col-sm-2">
+        <h4 style="font-color:rgb(31, 161, 194)">Source</h4>
+        <select name= source>
+        {% for landmark in landmarks %}
+        <option value= "{{landmark}}" selected='selected'>{{landmark}}</option>"
+        {% endfor %}
+      </select>
+
+      </div>
+</div>
+      <div class="col-sm-2">
+        <h4>Destination</h4>
+        <select name= target>
+        {% for landmark in landmarks %}
+            <option value= "{{landmark}}" selected='selected'>{{landmark}}</option>"
+        {% endfor %}
+        </select>
+      </div>
+      <button type="submit" value="Submit" >Find Path</button>
+      <!-- col-lg-3 -->
     </div>
   </div>
+</form>
 
-  <div id="r">
-    <div class="container">
-      <div class="row centered">
-        <div class="col-lg-8 col-lg-offset-2">
-          <h4>DESIGNERS, DEVELOPERS, STORYTELLERS.</h4>
-          <p>We believe that everyone has a story, and we are inspired to help others share theirs.</p>
-        </div>
-      </div>
+ 
+  
+  <br>
+  <br>
+  <iframe src="{{ final_map }}"
+			frameborder="0"
+			marginheight="0"
+			marginwidth="0"
+			width="100%"
+			height="80%"
+			scrolling="auto">
+	</iframe>
 
-    </div>
-  </div>
-  <!-- r wrap -->
-
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <div id="f">
     <div class="container">
       <div class="row centered">
