@@ -191,6 +191,19 @@
               <option value= "{{landmark}}" selected='selected'>{{landmark}}</option>"
           {% endfor %}
           </select>
+       <h4>Mode</h4>
+          <select style="width:180px;" name= mode>
+          {% for mode in modes %}
+              <option value= "{{mode}}" selected='selected'>{{mode}}</option>"
+          {% endfor %}
+          </select>
+
+      <h4>Optimizer</h4>
+          <select style="width:180px;" name= optim>
+          {% for optim in optims %}
+              <option value= "{{optim}}" selected='selected'>{{optim}}</option>"
+          {% endfor %}
+          </select>
         
         <div class="col-sm-2">
           <br>

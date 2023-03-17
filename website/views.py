@@ -78,7 +78,8 @@ def travelLog():
 
 @views.route('/ub')
 def ub():
-    return render_template('ub.html')
+    comments = Comment.query.filter_by(post_id=2)
+    return render_template('ub.html',comments=comments,user=current_user)
 
 @views.route('/tp')
 def tp():
@@ -87,11 +88,13 @@ def tp():
 
 @views.route('/biotech')
 def biotech():
-    return render_template('biotech.html')
+    comments=Comment.query.filter_by(post_id = 3)
+    return render_template('biotech.html',comments=comments,user=current_user)
 
 @views.route('/hm')
 def hm():
-    return render_template('hotelmgt.html')
+    comments = Comment.query.filter_by(post_id=4)
+    return render_template('hotelmgt.html',comments=comments,user=current_user)
 
 @views.route("/create-comment/<post_id>", methods=['POST'])
 @login_required
@@ -101,9 +104,11 @@ def create_comment(post_id):
     if not text:
         flash('Comment cannot be empty.', category='error')
     else:
-        comment = Comment(text=text, author=current_user.id, post_id=1)
+        comment = Comment(text=text, author=current_user.id, post_id=post_id)
         db_sql.session.add(comment)
         db_sql.session.commit()
         print(comment.text)
-
+    print(post_id)
+    if post_id=='2':
+        return redirect(url_for('views.ub'))
     return redirect(url_for('views.tp'))

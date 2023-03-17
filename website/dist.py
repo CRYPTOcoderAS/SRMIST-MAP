@@ -31,6 +31,8 @@ def distance():
         landmarks = db['LANDMARKS']
         source=request.form['source']
         target = request.form['target']
+        mode= request.form['mode']
+        optim = request.form['optim']
         source_coordinates=[]
         target_coordinates=[]
 
@@ -42,8 +44,8 @@ def distance():
         start_latlng = (source_coordinates[0],source_coordinates[1])
         end_latlng = (target_coordinates[0],target_coordinates[1])
         mode = 'walk'
-        optimizer = 'time'
-        graph = ox.graph.graph_from_bbox(12.8303, 12.8169, 80.0563, 80.0363)
+        optimizer = optim
+        graph = ox.graph.graph_from_bbox(12.8303, 12.8169, 80.0563, 80.0363,network_type=mode)
         # find the nearest node to the start location
         orig_node = ox.distance.nearest_nodes(graph, start_latlng[1], start_latlng[0])
         # find the nearest node to the end location
@@ -53,18 +55,15 @@ def distance():
                                           orig_node,
                                           dest_node,
                                           weight=optimizer)
+        print(shortest_route)
         shortest_route_map = ox.plot_route_folium(graph, shortest_route, tiles='openstreetmap')
         start_latlng = (start_latlng[0], start_latlng[1])
         end_latlng = (end_latlng[0], end_latlng[1])
-        start_marker = folium.Marker(
-            location=start_latlng,
-            icon=folium.Icon(color='green'))
-        end_marker = folium.Marker(
-            location=end_latlng,
-            icon=folium.Icon(color='red'))
+        start_marker = folium.Marker(location=start_latlng,icon=folium.Icon(color='green'))
+        end_marker = folium.Marker(location=end_latlng,icon=folium.Icon(color='red'))
         # add the circle marker to the map
         start_marker.add_to(shortest_route_map)
         end_marker.add_to(shortest_route_map)
         shortest_route_map.save('website/static/Destination_map.html')
-        return render_template('distance.html', landmarks=landmark,final_map='static/Destination_map.html')
-    return render_template('distance.html',landmarks=landmark,final_map='static/Destination_map.html')
+        return render_template('distance.html', landmarks=landmark,final_map='static/Destination_map.html',modes=['walk','bike','drive'],optims=['length','time'])
+    return render_template('distance.html',landmarks=landmark,final_map='static/Destination_map.html',modes=['walk','bike','drive'],optims=['length','time'])

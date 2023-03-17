@@ -45,124 +45,84 @@
           <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
           <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
           <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
-         
+         </ul>
       </div>
-        </ul>
       </div>
     </div>
-  </div>
 
   <br>
   <br>
-  <br>
-  
-  <div class="wrapper">
-    <style type="text/css">
-      p{
-      padding: 7px;
-      text-align: justify; }
-      .left{
-      width: 45%;
-      float: left; }
-      .right{
-      width: 45%;
-      float: right; }
-      .mid{
-        width: 45%;
-        float: center;
-      }
-      </style>
-      </head>
-      <body>
-      
-     <style>
-      h1 {
-          color:Green;
-      }
-      div.scroll {
-          margin:4px, 4px;
-          padding:4px;
-          background-color: green;
-          width: 500px;
-          height: 110px;
-          overflow-x: hidden;
-          overflow-y: auto;
-          text-align:justify;
-      }
+  <style>
+    .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid #00a2e8;
+}  
   </style>
-  <div class="right">
-    
-    <img src="https://i.ibb.co/2Sj99Nj/techpark.jpg" width="500" height="500" alt="">
-    <!-- <div class="sketchfab-embed-wrapper"> 
-      
-        <iframe width="500" height="500" title="SRM Techpark 3D Model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/ae62712e4e9a4d798012145c33ff5aaf/embed?autospin=1&autostart=1&preload=1&dnt=1">
-         </iframe> </div> -->
-        
-    <h2>SRM TECH PARK</h2>
-  </div>
-  <div style="height:500px;
-  width:800px;overflow:auto;
-  background-color:#00a2e8; color:white; scrollbar-base-color:rgb(0, 38, 255); 
-  font-family:sans-serif;padding:10px;">
-    
-    <div class="card-body">
-   
-        <div class="card">
-            {% for comment in comments %}
-          
-            <small class="text-muted1">{{comment.user.username}} </small> : {{comment.text}}
-          
-               
-           
-        
-                <small class="text-muted"> {{comment.date_created}}</small>
-                {% if user.id == comment.author %}
-              
-                <div class="btn-group">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-primary dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                  ></button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a
-                        href="/delete-comment/{{comment.id}}"
-                        class="dropdown-item"
-                        >Delete</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-                {% endif %}
-              </div>
+        <td></td>
+        <div class="float-container">
 
-            
-            {% endfor %}
-    </p>
+          <div class="float-child">
+            <div class="green">
+              <h2>Community Helper</h2>
+               
+              
+                  
+              {% for comment in comments %}
+            <div class="card" style="height:50px; width:600px;background-color:#00a2e8; color:white;
+    font-family:sans-serif;padding:8px;font-size:10;">
+     <!--  -->
+     <div class="text-muted" style="font-size:10;text-align:left ">  {{comment.user.username}} :  {{comment.text}}
+<div class="text-muted1" style="font-size:10;text-align:right"></div><small class="text-muted1">{{comment.date_created}}</small> </div>
+             
+             
+          
   
-<div class="left"> 
-        <form
-        class="input-group mb-3"
-        method="POST"
-        action="/create-comment/1"
-      >
-        <input
-          type="text"
-          id="text"
-          name="text"
-          class="form-control"
-          placeholder="Comment something!"
-        />
-        <button type="submit" class="btn btn-primary">Comment</button>
-      </form>
-    </div>
-     </div>
-   
-    </div>
- 
- 
-    
+              </div>
+              {% endfor %}
+    <br>
+    <br>
+    <form
+          class="input-group mb-3"
+          method="POST"
+          action="/create-comment/1"
+        >
+          <input
+            type="text"
+            id="text"
+            name="text"
+            class="form-control"
+            placeholder="Comment something!"
+          />
+        <br>
+          <button type="submit" class="btn btn-primary">Comment</button>
+        </form>
+  
+            </div>
+          </div>
+          
+          <div class="float-child">
+            <div class="blue">
+              <img src="https://i.ibb.co/2Sj99Nj/techpark.jpg" width="700" height="497" alt="">
+            <!-- <div class="sketchfab-embed-wrapper"> 
+              
+                <iframe width="500" height="500" title="SRM Techpark 3D Model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/ae62712e4e9a4d798012145c33ff5aaf/embed?autospin=1&autostart=1&preload=1&dnt=1">
+                 </iframe> </div> -->
+                
+            <h2>SRM TECH PARK</h2>
+
+            </div>
+          </div>
+          
+        </div>
+
+
      <div>
 
     
@@ -188,9 +148,6 @@
         <td>Optical Wireless Communication Lab(DRDO)</td>
         <td>SRM Tejas Network Joint Venture</td>
         <td>Class Rooms</td>  
-        <td></td>
-        <td></td>
-        <td></td>
       </tr>
       <tr>
         <th scope="row">2</th>
@@ -322,7 +279,7 @@
   </table>
     </div>
     
-  
+
     
   <!-- Footer -->
   <div id="f">
@@ -333,6 +290,7 @@
     </div>
   </div>
 
+
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
@@ -341,3 +299,6 @@
 </body>
 
 </html>
+
+        <td></td>
+<td></td>
