@@ -260,7 +260,7 @@
 
 <table style=" margin-left: auto;  
 margin-right: auto; ">
-<tr><td>
+<tr>
 <form method="POST" action="{{ url_for('views.about') }}">
     <!-- Buttons -->
 
@@ -286,13 +286,15 @@ margin-right: auto; ">
     <td>{{ data[2] }}</td></tr>
     <tr style="border: 3px solid black"><td>Floor No.:</td>
     <td>{{ data[3] }}</td></tr>
-   </table></form>
+   </table>
    </td>
 </table>
+</form> <br>
 
+</td>
 
   <!-- Footer -->
-  <div id="f">
+  <div id="f" >
     <div class="container">
       <div class="row centered">
       </div>
@@ -303,6 +305,6 @@ margin-right: auto; ">
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="static/js/bootstrap.min.js"></script>
-</body>
 
+</body>
 </html>
