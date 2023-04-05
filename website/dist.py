@@ -8,11 +8,13 @@ import folium
 import base64
 from folium import IFrame
 ox.config(log_console=True, use_cache=True)
+
 try:
     conn = pymongo.MongoClient('mongodb+srv://aditya:12345@cluster0.rutst.mongodb.net/test')
     print("Connected successfully!!!")
 except:
     print("Could not connect to MongoDB")
+
 
 db = conn.SRMAP
 collection=db['LANDMARKS']
@@ -59,9 +61,9 @@ def distance():
                                           weight=optimizer)
         le=nx.shortest_path_length(graph,orig_node,dest_node, method='dijkstra',weight=optimizer)
         if optimizer=='time':
-            Info='It will take you '+str(le)+' minutes'
+            Info='It will take you '+str(int(le))+' minutes'
         elif optimizer=='length':
-            Info='The distance between your source and target '+str(le)+' meters'
+            Info='The distance between your source and target '+str(int(le))+' meters'
         else:
             Info='Please select your source and target'
 
@@ -82,7 +84,7 @@ def distance():
             popup = folium.Popup(iframe, max_width=400)
             start_latlng = (start_latlng[0], start_latlng[1])
             start_marker = folium.Marker(location=start_latlng, icon=folium.Icon(color='green'), popup=popup,
-                                         tooltip=html)
+                                         tooltip=source)
         elif source == 'SRM University Building':
             encoded = base64.b64encode(open('website/ub.jpg', 'rb').read())
             html = '<img src="data:image/png;base64,{}">'.format
@@ -90,7 +92,7 @@ def distance():
             popup = folium.Popup(iframe, max_width=400)
             start_latlng = (start_latlng[0], start_latlng[1])
             start_marker = folium.Marker(location=start_latlng, icon=folium.Icon(color='green'), popup=popup,
-                                         tooltip=html)
+                                         tooltip=source)
         else:
             start_latlng = (start_latlng[0], start_latlng[1])
             start_marker = folium.Marker(location=start_latlng, icon=folium.Icon(color='green'), popup=source,
@@ -101,7 +103,7 @@ def distance():
             iframe_t = IFrame(html_t(encoded_t.decode('UTF-8')), width=400, height=350)
             popup_t = folium.Popup(iframe_t, max_width=400)
             end_latlng = (end_latlng[0], end_latlng[1])
-            end_marker = folium.Marker(location=end_latlng, icon=folium.Icon(color='red'), popup=popup_t,tooltip=html_t)
+            end_marker = folium.Marker(location=end_latlng, icon=folium.Icon(color='red'), popup=popup_t,tooltip=target)
         elif target == 'BIO-Tech Block':
             encoded_t = base64.b64encode(open('website/BioTech.jpg', 'rb').read())
             html_t = '<img src="data:image/png;base64,{}">'.format
@@ -109,7 +111,7 @@ def distance():
             popup_t = folium.Popup(iframe_t, max_width=400)
             end_latlng = (end_latlng[0], end_latlng[1])
             end_marker = folium.Marker(location=end_latlng, icon=folium.Icon(color='red'), popup=popup_t,
-                                       tooltip=html_t)
+                                       tooltip=target)
         elif target == 'SRM University Building':
             encoded_t = base64.b64encode(open('website/ub.jpg', 'rb').read())
             html_t = '<img src="data:image/png;base64,{}">'.format
@@ -117,7 +119,7 @@ def distance():
             popup_t = folium.Popup(iframe_t, max_width=400)
             end_latlng = (end_latlng[0], end_latlng[1])
             end_marker = folium.Marker(location=end_latlng, icon=folium.Icon(color='red'), popup=popup_t,
-                                       tooltip=html_t)
+                                       tooltip=target)
         else:
             end_latlng = (end_latlng[0], end_latlng[1])
             end_marker = folium.Marker(location=end_latlng, icon=folium.Icon(color='red'), popup=target,
