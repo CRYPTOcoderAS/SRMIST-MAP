@@ -69,7 +69,27 @@ def distance():
         # Add Marker
         if source == 'Tech Park':
             encoded = base64.b64encode(open('website/techpark.jpg', 'rb').read())
-            html = '<img src="data:image/png;base64,{}">'.format
+            html = '''
+            <div class="row">
+            <div class="columntpl" style="float: left;width: 40%;">
+            <a href="http://127.0.0.1:8080/information" target="_blank" ><button style="margin:2px 20px 2px 20px">Floor Level-15</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-14</button></a>
+            <a href="http://127.0.0.1:8080/tp13" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-13</button></a>
+            <a href="http://127.0.0.1:8080/tp12" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-12</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-11</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-10</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-09</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-08</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-07</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-06</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-05</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-04</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-03</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-02</button></a>
+            <a href="http://127.0.0.1:8080/information" target="_blank"><button style="margin:2px 20px 2px 20px">Floor Level-01</button></a>
+            </div>
+            <div class="columntpr" style="float: right;width: 60%;"><img src="data:image/png;base64,{}" width="200" height="370"></div>
+            </div>'''.format
             iframe = IFrame(html(encoded.decode('UTF-8')), width=400, height=350)
             popup = folium.Popup(iframe, max_width=400)
             start_latlng = (start_latlng[0], start_latlng[1])

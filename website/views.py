@@ -29,6 +29,14 @@ views = Blueprint("views", __name__)
 def index():
     return render_template('index.html')
 
+@views.route('/tp12')
+def tp12():
+    return render_template('tp12.html')
+
+@views.route('/tp13')
+def tp13():
+    return render_template('tp13.html')
+
 
 @views.route('/about',methods=['POST','GET'])
 def about():
