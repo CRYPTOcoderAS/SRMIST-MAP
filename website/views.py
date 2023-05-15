@@ -37,6 +37,23 @@ def tp12():
 def tp13():
     return render_template('tp13.html')
 
+@views.route('/tp1301')
+def tp1301():
+    return render_template('1301.html')
+
+@views.route('/tp1303')
+def tp1303():
+    return render_template('1303.html')
+
+@views.route('/tp1304')
+def tp1304():
+    return render_template('1304.html')
+
+@views.route('/tp1306')
+def tp1306():
+    return render_template('1306.html')
+
+
 
 @views.route('/about',methods=['POST','GET'])
 def about():

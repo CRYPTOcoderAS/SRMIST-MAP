@@ -10,7 +10,6 @@
   <link rel="shortcut icon" href="static/ico/favicon.png">
 
   <title>SRM 3D Map</title>
-
   <!-- Bootstrap core CSS -->
   <link href="static/css/bootstrap.css" rel="stylesheet">
   <link href="static/css/font-awesome.min.css" rel="stylesheet">
@@ -98,6 +97,44 @@
 
 </style>
 
+
+
+<style>
+  main {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+area {
+outline: 5px solid var(--red);
+}
+.popup {
+padding: 20px;
+background-color: rgba(100, 100, 100, 0.9);
+color: white;
+font-weight: 100;
+font-size: 14px;
+position: absolute;
+
+
+opacity: 0;
+transform: scale(0);
+transition: opacity 300ms, transform 300ms;
+}
+.popup > .close {
+position: absolute;
+right: -10px;
+top: -10px;
+background-color: black;
+padding: 4px 10px;
+}
+
+.popup:target {
+opacity: 1;
+transform: scale(1);
+}
+</style>
+
 </head>
 
 <header class="header">
@@ -135,10 +172,39 @@
       </div>
     </div>
   </div>
+<!-- 
+  <img src="static\img\floor13.jpeg" alt="SRM" class="center"> -->
+ 
 
-  <img src="static\img\floor13.jpeg" alt="SRM" class="center">
 
 
+  <img src="static\img\floor13.jpeg" usemap="#desk-items" />
+  <map name="desk-items">
+    <area alt="pop1" title="headphones" href="http://127.0.0.1:8080/tp1301" coords="326,138,185,31" shape="rect">
+    <area alt="pop2" title="peripherals" href="http://127.0.0.1:8080/tp1304" coords="885,28,1031,137" shape="rect">
+    <area alt="pop3" title="stationery" href="http://127.0.0.1:8080/tp1303"  coords="181,404,331,477" shape="rect">
+    <area alt="pop4" title="stationery" href="http://127.0.0.1:8080/tp1306"   coords="883,408,1033,472" shape="rect">
+  </map>
+  
+  
+  
+  <div class="popup" id="pop1">
+      Classroom 1301
+      <a class="close" href="http://127.0.0.1:8080/tp1301">X</a>
+    </div>
+    <div class="popup" id="pop2">
+      classrom TP1304
+       <a class="close" href="website\templates\floors\1304.html">X</a>
+     </div>
+    <div class="popup" id="pop3">
+      ML lab 1303
+      <a class="close" href="website\templates\floors\1303.html">X</a>
+    </div>
+  
+    <div class="popup" id="pop4">
+      Staff room TP1306A
+      <a class="close" href="website\templates\floors\1306.html">X</a>
+    </div>
 
   <!-- Footer -->
   <div id="f">
