@@ -26,6 +26,23 @@ body {
   margin-top: 70px;
 }
 
+.columntpl {
+  float: left;
+  width: 50%;
+}
+
+.columntpr {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* Titles */
 
 h1, h2, h3, h4, h5, h6 {

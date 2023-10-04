@@ -5012,6 +5012,8 @@ button.close {
   th.visible-lg.visible-sm, td.visible-lg.visible-sm {
     display: table-cell !important;
   }
+
+
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .visible-lg.visible-md {
@@ -5167,4 +5169,9 @@ th.hidden-lg, td.hidden-lg {
   .hidden-print, tr.hidden-print, th.hidden-print, td.hidden-print {
     display: none !important;
   }
+}
+.card {
+   .bg-primary {
+    background-color: rgba(0, 0, 0, 0.2)!important;
+}
 }

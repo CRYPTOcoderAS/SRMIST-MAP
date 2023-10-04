@@ -45,12 +45,87 @@
           <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
           <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
           <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
-         
-     
-        </ul>
+         </ul>
+      </div>
       </div>
     </div>
-  </div>
+
+  <br>
+  <br>
+  <style>
+    .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid #00a2e8;
+}
+  </style>
+        <td></td>
+        <div class="float-container">
+
+          <div class="float-child">
+            <div class="green">
+              <h2>Community Helper</h2>
+
+
+
+              {% for comment in comments %}
+            <div class="card" style="height:50px; width:600px;background-color:#00a2e8; color:white;
+    font-family:sans-serif;padding:8px;font-size:10;">
+     <!--  -->
+     <div class="text-muted" style="font-size:10;text-align:left ">  {{comment.user.username}} :  {{comment.text}}
+<div class="text-muted1" style="font-size:10;text-align:right"></div><small class="text-muted1">{{comment.date_created}}</small> </div>
+
+
+
+
+              </div>
+              {% endfor %}
+    <br>
+    <br>
+    <form
+          class="input-group mb-3"
+          method="POST"
+          action="/create-comment/1"
+        >
+          <input
+            type="text"
+            id="text"
+            name="text"
+            class="form-control"
+            placeholder="Comment something!"
+          />
+        <br>
+          <button type="submit" class="btn btn-primary">Comment</button>
+        </form>
+
+            </div>
+          </div>
+
+          <div class="float-child">
+            <div class="blue">
+              <img src="https://i.ibb.co/QcmknmP/biotech.png" width="700" height="497" alt="">
+            <!-- <div class="sketchfab-embed-wrapper">
+
+                <iframe width="500" height="500" title="SRM Techpark 3D Model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/ae62712e4e9a4d798012145c33ff5aaf/embed?autospin=1&autostart=1&preload=1&dnt=1">
+                 </iframe> </div> -->
+
+            <h2>SRM BIOTECH BLOCK</h2>
+
+            </div>
+          </div>
+
+        </div>
+
+
+     <div>
+
+
 
   <br>
   <br>
@@ -58,8 +133,6 @@
   
   <div class="wrapper">
     <div class="box">
-      <img src="https://i.ibb.co/QcmknmP/biotech.png" width="500" height="500" alt="">
-      <h2>BIO-TECH BLOCK</h2>
       <table class="table">
     <thead class="thead-light">
       <tr>

@@ -10,7 +10,10 @@
   <link rel="shortcut icon" href="static/ico/favicon.png">
 
   <title>SRM 3D Map</title>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b7a5a0a62068f9373c2218ace065dfb5beda9989
   <!-- Bootstrap core CSS -->
   <link href="static/css/bootstrap.css" rel="stylesheet">
   <link href="static/css/font-awesome.min.css" rel="stylesheet">
@@ -21,7 +24,11 @@
   <script src="static/js/Chart.js"></script>
 
 <style>
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> b7a5a0a62068f9373c2218ace065dfb5beda9989
     html,body {
       font-family: 'Lato', sans-serif;
       font-weight: 400;
@@ -30,6 +37,7 @@
       color: #eee;
     }
 
+<<<<<<< HEAD
     .header {
           height: 100vh;
           background-image: 
@@ -44,6 +52,8 @@
 
           clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     }
+=======
+>>>>>>> b7a5a0a62068f9373c2218ace065dfb5beda9989
 
     .brand-box {
           position: absolute;
@@ -112,12 +122,54 @@
 
 </style>
 
+<<<<<<< HEAD
+=======
+
+
+<style>
+  main {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+area {
+outline: 5px solid var(--red);
+}
+.popup {
+padding: 20px;
+background-color: rgba(100, 100, 100, 0.9);
+color: white;
+font-weight: 100;
+font-size: 14px;
+position: absolute;
+
+
+opacity: 0;
+transform: scale(0);
+transition: opacity 300ms, transform 300ms;
+}
+.popup > .close {
+position: absolute;
+right: -10px;
+top: -10px;
+background-color: black;
+padding: 4px 10px;
+}
+
+.popup:target {
+opacity: 1;
+transform: scale(1);
+}
+</style>
+
+>>>>>>> b7a5a0a62068f9373c2218ace065dfb5beda9989
 </head>
 
 <header class="header">
   <div class="brand-box">
       <span class="brand"></span>
   </div>
+<<<<<<< HEAD
   
   <div class="text-box">
       <h1 class="heading-primary">
@@ -126,6 +178,10 @@
       </h1>
       <a href="/distance" class="btn btn-white btn-animated">PATH FINDER</a>
   </div>
+=======
+
+
+>>>>>>> b7a5a0a62068f9373c2218ace065dfb5beda9989
 </header>
 
 <body>
@@ -150,17 +206,58 @@
           <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
           <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
           <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
+<<<<<<< HEAD
          
+=======
+
+>>>>>>> b7a5a0a62068f9373c2218ace065dfb5beda9989
         </ul>
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 
 
   <img src="https://i.ibb.co/cr01NV9/SRM.png" alt="SRM" class="center">
 
 
   
+=======
+<!-- 
+  <img src="static\img\floor13.jpeg" alt="SRM" class="center"> -->
+ 
+
+
+
+  <img src="static\img\floor13.jpeg" usemap="#desk-items" />
+  <map name="desk-items">
+    <area alt="pop1" title="headphones" href="http://127.0.0.1:8080/tp1301" coords="326,138,185,31" shape="rect">
+    <area alt="pop2" title="peripherals" href="http://127.0.0.1:8080/tp1304" coords="885,28,1031,137" shape="rect">
+    <area alt="pop3" title="stationery" href="http://127.0.0.1:8080/tp1303"  coords="181,404,331,477" shape="rect">
+    <area alt="pop4" title="stationery" href="http://127.0.0.1:8080/tp1306"   coords="883,408,1033,472" shape="rect">
+  </map>
+  
+  
+  
+  <div class="popup" id="pop1">
+      Classroom 1301
+      <a class="close" href="http://127.0.0.1:8080/tp1301">X</a>
+    </div>
+    <div class="popup" id="pop2">
+      classrom TP1304
+       <a class="close" href="website\templates\floors\1304.html">X</a>
+     </div>
+    <div class="popup" id="pop3">
+      ML lab 1303
+      <a class="close" href="website\templates\floors\1303.html">X</a>
+    </div>
+  
+    <div class="popup" id="pop4">
+      Staff room TP1306A
+      <a class="close" href="website\templates\floors\1306.html">X</a>
+    </div>
+
+>>>>>>> b7a5a0a62068f9373c2218ace065dfb5beda9989
   <!-- Footer -->
   <div id="f">
     <div class="container">
@@ -173,4 +270,12 @@
 
 
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+
+
+
+
+>>>>>>> b7a5a0a62068f9373c2218ace065dfb5beda9989

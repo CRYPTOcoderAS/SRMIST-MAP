@@ -45,21 +45,90 @@
           <li><a href="{{ url_for('dist.distance') }}">PATH FINDER</a></li>
           <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
           <li><a href="{{ url_for('auth.sign_up') }}">SIGN UP</a></li>
-         
-     
-        </ul>
+         </ul>
+      </div>
       </div>
     </div>
-  </div>
+
+  <br>
+  <br>
+  <style>
+    .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid #00a2e8;
+}
+  </style>
+        <td></td>
+        <div class="float-container">
+
+          <div class="float-child">
+            <div class="green">
+              <h2>Community Helper</h2>
+
+
+
+              {% for comment in comments %}
+            <div class="card" style="height:50px; width:600px;background-color:#00a2e8; color:white;
+    font-family:sans-serif;padding:8px;font-size:10;">
+     <!--  -->
+
+              <div class="text-muted" style="font-size:10;text-align:left ">  {{comment.user.username}} :  {{comment.text}}
+<div class="text-muted1" style="font-size:10;text-align:right"></div><small class="text-muted1">{{comment.date_created}}</small> </div>
+
+
+
+
+              </div>
+              {% endfor %}
+    <br>
+    <br>
+    <form
+          class="input-group mb-3"
+          method="POST"
+          action="/create-comment/2"
+        >
+          <input
+            type="text"
+            id="text"
+            name="text"
+            class="form-control"
+            placeholder="Comment something!"
+          />
+        <br>
+          <button type="submit" class="btn btn-primary">Comment</button>
+        </form>
+
+            </div>
+          </div>
+
+          <div class="float-child">
+            <div class="blue">
+              <img src="https://i.ibb.co/YyMqrc8/ub.jpg" width="700" height="497" alt="">
+            <!-- <div class="sketchfab-embed-wrapper">
+
+                <iframe width="500" height="500" title="SRM Techpark 3D Model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/ae62712e4e9a4d798012145c33ff5aaf/embed?autospin=1&autostart=1&preload=1&dnt=1">
+                 </iframe> </div> -->
+
+            <h2>SRM UNIVERSITY BUILDING</h2>
+
+            </div>
+          </div>
+
+        </div>
 
   <br>
   <br>
   <br>
-  
+
   <div class="wrapper">
     <div class="box">
-      <img src="https://i.ibb.co/YyMqrc8/ub.jpg" width="500" height="500" alt="">
-      <h2>UNIVERSITY BUILDING</h2>
       <table class="table">
     <thead class="thead-light">
       <tr>
@@ -80,7 +149,7 @@
         <th scope="row">1</th>
         <td>Digital Library</td>
         <td>Own Book Reading Section</td>
-        <td></td>  
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -98,7 +167,7 @@
         <th scope="row">3</th>
         <td>SRMIST Admissions (Sci and Humanities)</td>
         <td>ITKM Help Center </td>
-        <td>University Information Center</td>  
+        <td>University Information Center</td>
         <td></td>
         <td></td>
         <td></td>
@@ -107,7 +176,7 @@
         <th scope="row">4</th>
         <td>SRM Sat Lab</td>
         <td>Directorate of Alumni Affairs</td>
-        <td>ITKM Training Center</td>  
+        <td>ITKM Training Center</td>
         <td>Tissue Engineering Lab</td>
         <td>Phytochemistry Lab</td>
         <td>Research Office</td>
@@ -116,7 +185,7 @@
         <th scope="row">5</th>
         <td>Tamizh Academy</td>
         <td>Dept of Mathematics</td>
-        <td>Staff Rooms</td>  
+        <td>Staff Rooms</td>
         <td>Tamil Association</td>
         <td></td>
         <td></td>
@@ -125,7 +194,7 @@
         <th scope="row">6</th>
         <td>Dept of Mechanical Engg. </td>
         <td>Dept of Physics and Nanotech</td>
-        <td>Physics Material Science Lab</td>  
+        <td>Physics Material Science Lab</td>
         <td>Amul Canteen</td>
         <td>Nanotech Lab</td>
         <td></td>
@@ -134,7 +203,7 @@
         <th scope="row">7</th>
         <td>NextTech Lab</td>
         <td>Dept of Physics and Nanotech Research Scholars</td>
-        <td>CSE Programming Lab</td>  
+        <td>CSE Programming Lab</td>
         <td>Audit Section</td>
         <td>Career Development Center</td>
         <td>Chemistry Staff Room</td>
@@ -143,7 +212,7 @@
         <th scope="row">8</th>
         <td>LDRA Centre</td>
         <td>Dept of CSE Staff Room</td>
-        <td>Dept of IT Staff Room</td>  
+        <td>Dept of IT Staff Room</td>
         <td>CSE Programming Lab</td>
         <td>Dept of Mathematics</td>
         <td>Electrical Workshop</td>
@@ -152,7 +221,7 @@
         <th scope="row">9</th>
         <td>AHU Room</td>
         <td>EB Room</td>
-        <td>Academia Help Desk</td>  
+        <td>Academia Help Desk</td>
         <td>Accounts Section</td>
         <td>B.Sc.Horticulture</td>
         <td>Administrative Office</td>
@@ -161,7 +230,7 @@
         <th scope="row">10</th>
         <td>Conference Hall</td>
         <td>HOD Office (Dept of Mathematics)</td>
-        <td>Class Rooms</td>  
+        <td>Class Rooms</td>
         <td>EB Room/td>
         <td>Staff Room</td>
         <td></td>
@@ -170,7 +239,7 @@
         <th scope="row">11</th>
         <td>Dept of English and Foreign Languages</td>
         <td>Canteen</td>
-        <td>Chemistry Research Scholars</td>  
+        <td>Chemistry Research Scholars</td>
         <td>SRM Care</td>
         <td>Taiwan Education Centre</td>
         <td>Class Rooms</td>
@@ -179,7 +248,7 @@
         <th scope="row">12</th>
         <td>Dept of Software Engineering</td>
         <td>Programming Languages Lab</td>
-        <td>Language Resource Centre</td>  
+        <td>Language Resource Centre</td>
         <td>Class Rooms</td>
         <td>Optical Lithigraphy Lab</td>
         <td>Staff Room</td>
@@ -188,7 +257,7 @@
         <th scope="row">13</th>
         <td>High Performance Computing Lab</td>
         <td>Chemical Sciences Lab</td>
-        <td>Environmental Science and Technologies Lab</td>  
+        <td>Environmental Science and Technologies Lab</td>
         <td>Electrochemical Energy Lab</td>
         <td>Quantum Engineering Lab</td>
         <td>Material Processing Lab</td>
@@ -197,7 +266,7 @@
         <th scope="row">14</th>
         <td>Office of Controller of Examinations</td>
         <td>Enquiry Office</td>
-        <td>Evaluation Hall</td>  
+        <td>Evaluation Hall</td>
         <td>Conference Room</td>
         <td></td>
         <td></td>
@@ -206,7 +275,7 @@
         <th scope="row">15</th>
         <td>University Office</td>
         <td>Chancellor Office</td>
-        <td>Vice Chancellor Office</td>  
+        <td>Vice Chancellor Office</td>
         <td>Registrar Office</td>
         <td></td>
         <td></td>

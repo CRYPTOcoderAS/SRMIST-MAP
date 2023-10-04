@@ -21,6 +21,11 @@
   > A feature-rich web-based navigation application designed for effortless navigation within the SRMIST Chennai
 campus, offering floor-wise plans and routes to faculty cabins, along with a community section for notices.
 
+
+## Presentation Link : 
+[PPTX Presentation Link](https://github.com/cryptocoderas)
+
+
   ## APP PREVIEW
 
 <p align="center">
