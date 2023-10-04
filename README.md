@@ -1,6 +1,8 @@
 
  <p align="center">
 <a href='https://drive.google.com/file/d/1ytvxXV_6FFZzt71OToGbZ9c4I0TOpwhQ/view?usp=sharing'>
+![Akshat Sachan](https://drive.google.com/uc?id=1ytvxXV_6FFZzt71OToGbZ9c4I0TOpwhQ)
+
 <img src='https://drive.google.com/file/d/1ytvxXV_6FFZzt71OToGbZ9c4I0TOpwhQ/view?usp=sharing' type='image'  style=" align: center ; width: 650px;  height: 320px"  title="Akshat Sachan" >
 </a>
   
