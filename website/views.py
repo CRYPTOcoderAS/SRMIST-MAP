@@ -86,6 +86,14 @@ def tp():
     comments=Comment.query.filter_by(post_id = 1)
     return render_template('techpark.html',comments=comments,user=current_user)
 
+@views.route('/tp12')
+def tp12():
+    return render_template('tp12.html')
+
+@views.route('/tp13')
+def tp13():
+    return render_template('tp13.html')
+
 @views.route('/biotech')
 def biotech():
     comments=Comment.query.filter_by(post_id = 3)
